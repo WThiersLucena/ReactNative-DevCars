@@ -8,13 +8,14 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
   const [saudaçao, setSaudaçao] = useState("");
   const [larguraHome, setLarguraHome] = useState(new Animated.Value(350));
   const [alturaHome, setAlturaHome] = useState(new Animated.Value(350));
   const [display, setDisplay] = useState(true); 
-
+  const { navigate, goBack } = useNavigation();
   
   Animated.sequence([
     Animated.timing(larguraHome, {
@@ -32,17 +33,19 @@ export function Home() {
   useEffect(() => {
     const horaAtual = new Date().getHours();
 
-    if (horaAtual < 12) {
-      setSaudaçao("Good morning");
+    if (horaAtual <= 12) {
+      setSaudaçao("Good Morning");
     } else if (horaAtual >= 12 && horaAtual < 18) {
-      setSaudaçao("Good after");
+      setSaudaçao("Good afternoon");
     } else {
       setSaudaçao("Good night");
     }
   }, []);
 
 
-  
+  function handlerNavigation (){
+    navigate("Loja" as never)
+  }
 
   return (
     <View style={styles.container}>
@@ -62,10 +65,13 @@ export function Home() {
         
       > 
         <View style={styles.central}>            
-          <TouchableOpacity activeOpacity={0.3}>
+          <TouchableOpacity activeOpacity={0.3}
+          onPress={handlerNavigation}
+          >
              <Image
              style={{width:350,height:350, justifyContent:"center",alignItems:"center"}}              
-             source={require("../../assets/images/Logo/logo-rev01.png")}/>             
+             source={require("../../assets/images/Logo/logo-rev01.png")}/> 
+
           </TouchableOpacity>            
         </View>
       </Animated.View>

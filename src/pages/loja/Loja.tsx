@@ -6,6 +6,11 @@ import {View,Text,StyleSheet,TouchableOpacity,
 } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { AntDesign } from "@expo/vector-icons";
+import { Destaques } from '../../components/Destaques/DestaquesCard';
+import { CarroseisMarcas } from '../../components/Carrosseis/CarrosselMarcas';
+import  { Footer }  from '../../components/Footer/Footer';
+import {Header} from '../../components/Header/Header';
+import {CarroselApresentação} from '../../components/Carrosseis/CarroselApresentação';
 
   {/* FOTOS E DADOS DO 1º SLIDE */}
 const slides = [
@@ -84,178 +89,18 @@ export function Loja() {
     <View style={styles.container}>
       <ScrollView>
         <View>
-          <Text style={styles.headerEfooter}>Area reservada ao Header</Text>
+          <Header/>
           <View style={styles.container}>
           {/* 1º Modelo de Slide  */}
-          <AppIntroSlider renderItem={renderSlides} data={slides} />
+
+          <CarroselApresentação/>
+          {/* <AppIntroSlider renderItem={renderSlides} data={slides} /> */}
+
+          {/* Inicio do Carrossel de Marcas */}
           </View>
-          {/* LOGO DE TODAS AS MARCAS ABAIXO   [ inicio linha 94 ate 257]*/}
-          <ScrollView
-            style={styles.logosMarca}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          >
-            {/* LOGO 1 */}            
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/ferrari-logo.png")}
-                />
-              </View>
-              <Text style={styles.conteudo}>Ferrari</Text>
-            </TouchableOpacity>
-            {/* LOGO 2 */}
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 50,
-                    height: 50,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/lamborghini.png")}
-                />
-              </View>
+            <CarroseisMarcas/>
+         </View>
 
-              <Text style={styles.conteudo}>Lamborghini</Text>
-            </TouchableOpacity>
-            {/* LOGO 3*/}
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/bmw.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Bmw</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 4 */}
-
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 50,
-                    height: 50,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/jaguar.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Jaguar</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 5 */}
-
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/opel.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Opel</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 6 */}
-
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 50,
-                    height: 50,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/audi.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Audi</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 7 */}
-
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 50,
-                    height: 50,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/rolls-royce.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Rolls-Royce</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 8 */}
-
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/aston-martin.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Aston-Martin</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 9 */}
-
-            <TouchableOpacity style={styles.actionButton}>
-              <View style={styles.areaButton}>
-                <Image
-                  style={{
-                    width: 50,
-                    height: 50,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  source={require("../../assets/images/Home/subaru.png")}
-                />
-              </View>
-
-              <Text style={styles.conteudo}>Subaru</Text>
-            </TouchableOpacity>
-
-            {/* LOGO 10 */}
-          </ScrollView>
-          {/* FIM DAS LOGO DE TODAS AS MARCAS  */}
-
-        </View>
          {/* INICIO DO CAMPO DE BUSCA [inicio linha 261 ate 291] */}
         <View>
           <Text style={styles.encontreSeuCarro}>Encontro seu Carro :</Text>
@@ -274,26 +119,11 @@ export function Loja() {
         </View>
          {/* FIM  DO CAMPO DE BUSCA [inicio linha 261 ate 291] */}
 
-         {/* INICIO DA AREA DE DESTAQUE [ inicio linha 294 ate 310]*/}
-        <View>
-          <Text style={styles.encontreSeuCarro}>
-            Are de Destaques os Princicais veiculos
-          </Text>
-          <View>
 
-          </View>
-          <TouchableOpacity activeOpacity={0.3}>
-            <Image
-              style={{
-                width: 250,
-                height: 250,
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              source={require("../../assets/images/Estoque/Nissan_GT-R.jpg")}
-            />
-          </TouchableOpacity>
-        </View>
+         {/* INICIO DA AREA DE DESTAQUE [ inicio linha 294 ate 310]*/}
+        
+             <Destaques/>
+
           {/* INICIO DA AREA DE DESTAQUE [ inicio linha 294 ate 310]*/}
           
           {/* INICIO DA AREA DE NOTICIAS E EVENDOS [inicio da linha 313 ate ....] */}
@@ -307,10 +137,8 @@ export function Loja() {
 
                 
          {/*AREA RESERVADA AO FOOTER  */}
-        <View>
-          <Text style={styles.headerEfooter}>Area reservada ao Footer</Text>
-        </View>
-
+        
+        <Footer/>
         
         </ScrollView>
     </View>
@@ -367,11 +195,5 @@ const styles = StyleSheet.create({
   },
   areaDasLogo: {
     backgroundColor: "#fff",
-  },
-  headerEfooter:{
-    color: "#daa520",
-    marginTop:15,
-    marginBottom: 10,
-    textAlign: "center",
   },
 });
