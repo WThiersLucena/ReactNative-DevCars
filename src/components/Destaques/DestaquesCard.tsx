@@ -24,7 +24,8 @@ export function Destaques() {
             showsHorizontalScrollIndicator={false}
           >
            
-            {/* CARD 1 */}            
+            {/* CARD 1 */}   
+            <View style={styles.areaButton2}>        
             <TouchableOpacity style={styles.actionButton}
             onPress={() => setModalActive(true)}>
               <View style={styles.areaButton}>
@@ -38,14 +39,19 @@ export function Destaques() {
                   }}
                   source={require("../../assets/images/Estoque/Ferarri-monza.jpg")}
                 />
+                
               </View>
               <View style={styles.itensMarcaValor}>
               <Text style={styles.marcaCard}>Ferrari- Monza</Text>
               <Text style={styles.valorCard} >R$ 19.000.000,00</Text>
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
+
             </TouchableOpacity>
+            </View> 
             {/* CARD 2 */}
+            <View style={styles.areaButton2}>            
+            
             <TouchableOpacity style={styles.actionButton}
             onPress={() => setModalActive(true)}>
               <View style={styles.areaButton}>
@@ -66,7 +72,9 @@ export function Destaques() {
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
             </TouchableOpacity>
+            </View>
             {/* CARD 3*/}
+            <View style={styles.areaButton2}>
             <TouchableOpacity style={styles.actionButton}
             onPress={() => setModalActive(true)}>
               <View style={styles.areaButton}>
@@ -86,10 +94,11 @@ export function Destaques() {
               <Text style={styles.valorCard} >R$ 19.000.000,00</Text>
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
+              
             </TouchableOpacity>
-
+              </View>
             {/* CARD 4 */}
-
+            <View style={styles.areaButton2}>
             <TouchableOpacity style={styles.actionButton}
             onPress={() => setModalActive(true)}>
               <View style={styles.areaButton}>
@@ -110,9 +119,10 @@ export function Destaques() {
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
             </TouchableOpacity>
+            </View>
 
             {/* CARD 5 */}
-
+            <View style={styles.areaButton2}>
             <TouchableOpacity style={styles.actionButton}
             onPress={() => setModalActive(true)}>
               <View style={styles.areaButton}>
@@ -133,7 +143,9 @@ export function Destaques() {
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
             </TouchableOpacity>
+            </View>
 
+            <View style={styles.areaButton2}>
             <TouchableOpacity style={styles.actionButton}>
               <View style={styles.areaButton}>
                 <Image
@@ -153,9 +165,10 @@ export function Destaques() {
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
             </TouchableOpacity>
+            </View>
 
             {/* CARD 6 */}
-
+            <View style={styles.areaButton2}>
             <TouchableOpacity style={styles.actionButton}>
               <View style={styles.areaButton}>
                 <Image
@@ -175,9 +188,10 @@ export function Destaques() {
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
             </TouchableOpacity>
+            </View>
 
             {/* CARD 7 */}
-
+            <View style={styles.areaButton2}>
             <TouchableOpacity style={styles.actionButton}>
               <View style={styles.areaButton}>
                 <Image
@@ -197,7 +211,7 @@ export function Destaques() {
               <Text style={styles.valorCard} >Ver Detalhes</Text>
               </View>
             </TouchableOpacity>
-            
+            </View>
       </ScrollView>
           {/* FIM DOS CARDS  DA AREA DESTAQUE */}
           {/* INICIO DOS MODAIS { INCIO LINHA 203 ATE 325 } */}
@@ -364,12 +378,21 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   areaButton: {
-    backgroundColor: "#daa520",
+    // backgroundColor: "#daa520",
     height: 360,
     width: 360,
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
+  },
+  areaButton2:{
+    backgroundColor: "#ecedf1",
+    height: 530,
+    width: 380,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 3,
   },
   itensMarcaValor:{
       fontWeight:"bold",
@@ -384,7 +407,7 @@ const styles = StyleSheet.create({
   marcaCard:{
     fontWeight:"bold",
     fontSize:19,
-    backgroundColor: "#c5c5bf9f",
+    backgroundColor: "#d8d8d4ec",
     height: 30,
     width: 350,
     textAlign: "center",

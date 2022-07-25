@@ -129,7 +129,7 @@ export function Loja() {
           {/* INICIO DA AREA DE NOTICIAS E EVENDOS [inicio da linha 313 ate ....] */}
         <View>
           <Text style={styles.conteudo}>
-            SSC Tuatara apresenta versao com até 2.230 cv
+            {/* SSC Tuatara apresenta versao com até 2.230 cv */}
           </Text>
           
         </View>

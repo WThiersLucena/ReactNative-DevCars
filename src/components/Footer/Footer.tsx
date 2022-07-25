@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 
-import { StyleSheet, Text, View} from "react-native";
+import { StyleSheet, Text, View,TouchableOpacity,Image} from "react-native";
 
 
 
 export function Footer (){
 
     return(       
-        <View>
-            {/* Area Reservada ao Footer */}
-          <Text style={styles.footer}>Area reservada ao Footer</Text>
-        </View>
+      <TouchableOpacity >
+      <View style={styles.header} >
+        <Image
+          style={{
+            width: 80,
+            height: 80,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius:20,
+            marginLeft:140,
+            margin: 10,
+          }}
+          source={require("../../assets/images/Estoque/logo-rev01.jpeg")}
+        />
+      </View>
+      
+    </TouchableOpacity>
     );
 }
 
